@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"gauge",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "gauge",
+    "description": "api documentation for [gauge (v2.7.3)](https://github.com/iarna/gauge) [![npm package](https://img.shields.io/npm/v/npmdoc-gauge.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gauge) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gauge.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gauge)",
     "devDependencies": {
-        "gauge": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "gauge": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-gauge",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-gauge",
+    "keywords": [
+        "documentation",
+        "gauge"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_gauge.js",
+    "name": "npmdoc-gauge",
+    "nameAlias": "npmdoc_gauge",
+    "nameOriginal": "npmdoc-gauge",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-gauge"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
