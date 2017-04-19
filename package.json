@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "gauge",
-    "description": "api documentation for [gauge (v2.7.3)](https://github.com/iarna/gauge) [![npm package](https://img.shields.io/npm/v/npmdoc-gauge.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gauge) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gauge.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gauge)",
+    "description": "#### api documentation for  [gauge (v2.7.3)](https://github.com/iarna/gauge)  [![npm package](https://img.shields.io/npm/v/npmdoc-gauge.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gauge) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gauge.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gauge)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "gauge": "*",
@@ -36,5 +36,5 @@
         "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
         "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.1"
+    "version": "0.0.2"
 }
