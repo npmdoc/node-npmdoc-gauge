@@ -1,18 +1,21 @@
-<svg height="238" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="238" fill="#555" width="720"></rect>
+<svg height="286" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="286" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">└─┬ gauge@2.7.3 </tspan>
-<tspan x="10" y="42">  ├── aproba@1.1.1 </tspan>
-<tspan x="10" y="58">  ├── console-control-strings@1.1.0 </tspan>
-<tspan x="10" y="74">  ├── has-unicode@2.0.1 </tspan>
-<tspan x="10" y="90">  ├── object-assign@4.1.1 </tspan>
-<tspan x="10" y="106">  ├── signal-exit@3.0.2 </tspan>
-<tspan x="10" y="122">  ├─┬ string-width@1.0.2 </tspan>
-<tspan x="10" y="138">  │ ├── code-point-at@1.1.0 </tspan>
-<tspan x="10" y="154">  │ └─┬ is-fullwidth-code-point@1.0.0 </tspan>
-<tspan x="10" y="170">  │   └── number-is-nan@1.0.1 </tspan>
-<tspan x="10" y="186">  ├─┬ strip-ansi@3.0.1 </tspan>
-<tspan x="10" y="202">  │ └── ansi-regex@2.1.1 </tspan>
-<tspan x="10" y="218">  └── wide-align@1.1.0</tspan>
+<tspan x="10" y="26">1 megabytes installed</tspan>
+<tspan x="10" y="42"></tspan>
+<tspan x="10" y="58">node_modules</tspan>
+<tspan x="10" y="74">└─┬ gauge@2.7.3 </tspan>
+<tspan x="10" y="90">  ├── aproba@1.1.1 </tspan>
+<tspan x="10" y="106">  ├── console-control-strings@1.1.0 </tspan>
+<tspan x="10" y="122">  ├── has-unicode@2.0.1 </tspan>
+<tspan x="10" y="138">  ├── object-assign@4.1.1 </tspan>
+<tspan x="10" y="154">  ├── signal-exit@3.0.2 </tspan>
+<tspan x="10" y="170">  ├─┬ string-width@1.0.2 </tspan>
+<tspan x="10" y="186">  │ ├── code-point-at@1.1.0 </tspan>
+<tspan x="10" y="202">  │ └─┬ is-fullwidth-code-point@1.0.0 </tspan>
+<tspan x="10" y="218">  │   └── number-is-nan@1.0.1 </tspan>
+<tspan x="10" y="234">  ├─┬ strip-ansi@3.0.1 </tspan>
+<tspan x="10" y="250">  │ └── ansi-regex@2.1.1 </tspan>
+<tspan x="10" y="266">  └── wide-align@1.1.0</tspan>
 </text>
 </svg>

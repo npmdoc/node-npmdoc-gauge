@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.gauge.gauge">
+            function <span class="apidocSignatureSpan"></span>gauge
+            <span class="apidocSignatureSpan">(arg1, arg2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.gauge.plumbing">
             function <span class="apidocSignatureSpan">gauge.</span>plumbing
             <span class="apidocSignatureSpan">(theme, template, width)</span>
@@ -416,6 +425,73 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.gauge" id="apidoc.module.gauge">module gauge</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gauge.gauge" id="apidoc.element.gauge.gauge">
+        function <span class="apidocSignatureSpan"></span>gauge
+        <span class="apidocSignatureSpan">(arg1, arg2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Gauge(arg1, arg2) {
+  var options, writeTo
+  if (arg1 &#x26;&#x26; arg1.write) {
+    writeTo = arg1
+    options = arg2 || {}
+  } else if (arg2 &#x26;&#x26; arg2.write) {
+    writeTo = arg2
+    options = arg1 || {}
+  } else {
+    writeTo = process.stderr
+    options = arg1 || arg2 || {}
+  }
+
+  this._status = {
+    spun: 0,
+    section: &#x27;&#x27;,
+    subsection: &#x27;&#x27;
+  }
+  this._paused = false // are we paused for back pressure?
+  this._disabled = true // are all progress bar updates disabled?
+  this._showing = false // do we WANT the progress bar on screen
+  this._onScreen = false // IS the progress bar on screen
+  this._needsRedraw = false // should we print something at next tick?
+  this._hideCursor = options.hideCursor == null ? true : options.hideCursor
+  this._fixedFramerate = options.fixedFramerate == null
+    ? !(/^v0\.8\./.test(process.version))
+    : options.fixedFramerate
+  this._lastUpdateAt = null
+  this._updateInterval = options.updateInterval == null ? 50 : options.updateInterval
+
+  this._themes = options.themes || defaultThemes
+  this._theme = options.theme
+  var theme = this._computeTheme(options.theme)
+  var template = options.template || [
+    {type: &#x27;progressbar&#x27;, length: 20},
+    {type: &#x27;activityIndicator&#x27;, kerning: 1, length: 1},
+    {type: &#x27;section&#x27;, kerning: 1, default: &#x27;&#x27;},
+    {type: &#x27;subsection&#x27;, kerning: 1, default: &#x27;&#x27;}
+  ]
+  this.setWriteTo(writeTo, options.tty)
+  var PlumbingClass = options.Plumbing || Plumbing
+  this._gauge = new PlumbingClass(theme, template, this.getWidth())
+
+  this._$$doRedraw = callWith(this, this._doRedraw)
+  this._$$handleSizeChange = callWith(this, this._handleSizeChange)
+
+  this._cleanupOnExit = options.cleanupOnExit == null || options.cleanupOnExit
+  this._removeOnExit = null
+
+  if (options.enabled || (options.enabled == null &#x26;&#x26; this._tty &#x26;&#x26; this._tty.isTTY)) {
+    this.enable()
+  } else {
+    this.disable()
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
